@@ -1,5 +1,5 @@
 // build widget
-const widgetSize = (config.runsInWidget ? config.widgetFamily : 'extraLarge')
+const widgetSize = (config.runsInWidget ? config.widgetFamily : 'small')
 let widget
 
 // set date format
@@ -48,16 +48,16 @@ async function buildSmallWidget() {
     const thumbnail = await loadImage(`https://api.wubbl0rz.tv/media/vods/${vod.filename}-sm.jpg`)
     const thumbStack = list.addStack()
     const thumbImg = thumbStack.addImage(thumbnail)
-    thumbImg.imageSize = new Size(150, 84.37)
-    thumbImg.cornerRadius = 12
+    thumbImg.cornerRadius = 8
     thumbImg.centerAlignImage()
-    list.addSpacer()
+    list.addSpacer(8)
 
     const vodRow = list.addStack()
     vodRow.layoutVertically()
     const vodTitle = vodRow.addText(vod.title)
     vodTitle.font = Font.semiboldSystemFont(14)
     vodTitle.lineLimit = 2;
+    vodRow.addSpacer(4)
 
     const vodDate = new Date(vod.date)
     const vodSubtitle = vodRow.addText(df.string(vodDate) + ' Uhr')
