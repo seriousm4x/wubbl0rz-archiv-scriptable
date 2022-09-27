@@ -93,7 +93,7 @@ async function buildExtraLargeWidget() {
     list.addSpacer()
 
     const vodsReq = await getVods(10)
-    let vods = vodsReq.results
+    let vods = vodsReq.result
 
     vodsStack = list.addStack()
     vodsStack.layoutHorizontally()
@@ -141,7 +141,7 @@ async function fillStack(stack, vods) {
 }
 
 async function getVods(count) {
-    const apiUrl = 'https://api.wubbl0rz.tv/vods?page_size=' + count;
+    const apiUrl = 'https://api.wubbl0rz.tv/vods?limit=' + count;
     const request = new Request(apiUrl)
     return await request.loadJSON();
 }
