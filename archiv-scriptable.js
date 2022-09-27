@@ -78,7 +78,7 @@ async function buildMediumLargeWidget() {
 
     const vodCount = (widgetSize == 'medium') ? 2 : 5
     const vodsReq = await getVods(vodCount)
-    const vods = vodsReq.results
+    const vods = vodsReq.result
 
     await fillStack(list, vods)
 
