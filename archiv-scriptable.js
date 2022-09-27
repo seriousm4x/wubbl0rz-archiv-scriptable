@@ -42,7 +42,7 @@ async function buildSmallWidget() {
     const list = new ListWidget()
     list.setPadding(10, 10, 10, 10)
     const vodsReq = await getVods(1)
-    const vod = vodsReq.results[0]
+    const vod = vodsReq.result[0]
     list.url = `https://archiv.wubbl0rz.tv/vods/watch/${vod.uuid}`
 
     const thumbnail = await loadImage(`https://api.wubbl0rz.tv/media/vods/${vod.filename}-sm.jpg`)
