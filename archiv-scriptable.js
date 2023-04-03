@@ -43,7 +43,7 @@ async function buildSmallWidget() {
     list.setPadding(10, 10, 10, 10)
     const vodsReq = await getVods(1)
     const vod = vodsReq.result[0]
-    list.url = `https://archiv.wubbl0rz.tv/vods/watch/${vod.uuid}`
+    list.url = `https://wubbl0rz.tv/vods/watch/${vod.uuid}`
 
     const thumbnail = await loadImage(`https://api.wubbl0rz.tv/media/vods/${vod.filename}-sm.jpg`)
     const thumbStack = list.addStack()
@@ -117,7 +117,7 @@ async function fillStack(stack, vods) {
         }
         const thisRow = stack.addStack()
         thisRow.layoutHorizontally()
-        thisRow.url = `https://archiv.wubbl0rz.tv/vods/watch/${vods[i].uuid}`
+        thisRow.url = `https://wubbl0rz.tv/vods/watch/${vods[i].uuid}`
         thisRow.size = new Size(0, 57)
 
         const titleStack = thisRow.addStack()
